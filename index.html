@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landify</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-left: 0;
+      display: none;
+    }
+
+    .dropdown-submenu.show .dropdown-menu {
+      display: block;
+    }
+
+    .nav-color:hover {
+      color: #00a19e;
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 1px 5px 20px #00a19e;
+    }
+
+    .btn2-header:hover {
+      transform: translateX(5px);
+      color: #00a19e;
+    }
+
+    .cards {
+      animation-name: cards;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-delay: 2s;
+    }
+
+    @keyframes cards {
+      0% {
+        translate: 0 -2px;
+      }
+
+      50% {
+        translate: 0 -1.5px;
+      }
+
+      75% {
+        translate: 0 1.5px;
+      }
+
+      100% {
+        translate: 0 2px;
+      }
+    }
+
+    .start {
+      animation-name: start;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+    }
+
+    @keyframes start {
+      0% {
+        translate: -800px 200px;
+      }
+
+      100% {
+        translate: 0 0;
+      }
+
+
+    }
+
+    .start-2 {
+      animation-name: start-2;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+    }
+
+    @keyframes start-2 {
+      0% {
+        translate: 800px 200px;
+      }
+
+      100% {
+        translate: 0 0;
+      }
+
+
+    }
+
+    .img-about:hover {
+      transform: scale(1.10);
+    }
+
+    .border-shadow:hover {
+      border: 1px solid #00a19e;
+      box-shadow: 0 3px 30px rgb(190, 191, 192);
+
+
+
+    }
+
+    .border-shadow2:hover {
+      border: 1px solid #00a19e;
+      box-shadow: 0 3px 30px rgb(190, 191, 192);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 30px #afdbdb;
+
+    }
+
+    .bottom {
+      animation-name: bottom;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+    }
+
+    @keyframes bottom {
+      0% {
+        translate: 0 800px;
+
+      }
+
+      100% {
+        translate: 0 0;
+      }
+    }
+
+    .jump:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px ghostwhite;
+    }
+
+    .jump-color:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px #afdbdb;
+      border-top: 5px solid #00a19e;
+
+      transition: 0.5s ease;
+    }
+
+    .jump-person:hover {
+      transform: translateY(-4px);
+    }
+
+    .zoom-img:hover {
+      transition: transform 0.4s ease;
+      transform: scale(1.1);
+    }
+
+    .color-g:hover {
+      color: #00a19e;
+    }
+
+    .services-card:hover {
+      box-shadow: 0 10px 30px gainsboro;
+      transform: translateY(-4px);
+      border-top: 7px solid #00a19e;
+
+    }
+
+
+
+
+    .map {
+      color: black;
+    }
+
+    .map:hover {
+      color: #00a19e;
+    }
+
+    .medya:hover {
+      color: #00a19e;
+    }
+
+    .atage {
+      color: white;
+
+    }
+
+    .atage:hover {
+      color: #00a19e;
+    }
+
+    .get {
+      background-color: white;
+      color: #00a19e;
+    }
+
+    .get:hover {
+      background-color: #00a19e;
+      color: white;
+    }
+
+    .ico {
+
+      border: 1px solid #a9afaf;
+      color: #a9afaf;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .icoo {
+      color: #a9afaf;
+
+
+    }
+
+    .ico :hover {
+
+      border-color: #00a19e;
+    }
+
+    .icoo :hover {
+      color: #00a19e;
+
+    }
+
+    /* ما اشغل؟ */
+    .feat-card:hover {
+      background-color: #00a19e;
+      color: white;
+
+    }
+
+    .feat-card:hover .feat-icon {
+      background-color: white;
+      color: #00a19e;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top ">
+    <div class="container  ">
+      <a href="#" class="navbar-brand fw-bold fs-2 ">Landify</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarNav"
+        aria-controls="NavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="NavbarNav">
+        <ul class="navbar-nav me-5  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link active fw-semibold" style="color: #00a19e;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-color">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-color">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-color">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-color">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle nav-color" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Dropdown1</a></li>
+              <li class="dropdown-submenu">
+                <a href="#" class="dropdown-item dropdown-toggle">
+                  Deep Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-item">Deep Dropdown1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item">Deep Dropdown2</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item">Deep Dropdown3</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item">Deep Dropdown4</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item">Deep Dropdown5</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#" class="dropdown-item">Dropdown2</a></li>
+              <li><a href="#" class="dropdown-item">Dropdown3</a></li>
+              <li><a href="#" class="dropdown-item">Dropdown4</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-color">Contact</a>
+          </li>
+        </ul>
+        <div class="d-flex ms-5">
+          <button type="button" class="btn btn text-white" style="background-color: #00a19e;">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+
+  <!-- header -->
+  <div style="height: 900px; background: linear-gradient(to bottom, rgb(255, 255, 255), #dbe7e7, rgb(207, 226, 226));">
+    <div class="container">
+      <div class="row justify-cntent-center mt-5">
+        <div class="col-lg-6 col-12 mt-5 start">
+          <div class="col-lg-12 mt-5 ">
+            <h5 class="fs-1 ">Creating Digital <br> Experiences That Matter</h5>
+          </div>
+          <div class="col-lg-12 mt-4">
+            <p class="fs-5 text-secondary">We craft beautiful, functional, and meaningful digital solutions that help
+              <br> businesses connect with
+              their
+              audiences in authentic ways.
+            </p>
+          </div>
+          <div class="row ">
+            <div class="col-lg-4 col-12 mt-5  ">
+              <button type="button" style="background-color: #00a19e; " class=" btn btn-header  p-3 "><a href="#"
+                  class="text-decoration-none text-white">Start You Journey</a></button>
+            </div>
+            <div class="col-lg-6 col-12 mt-5 btn2-header">
+              <a href="#" class=" text-decoration-none  fs-5 " style="color:rgb(48, 46, 46); font-weight: 400;"><i
+                  class="bi bi-play-circle fs-4 " style="color: #00a19e; "></i> Watch Our Story</a>
+            </div>
+
+          </div>
+
+          <div class="row mt-5 start">
+            <div class="col-lg-2 col-12 mt-3">
+              <h1 style="color: #00a19e;">150+</h1>
+              <p class="text-secondary">Projects Completed</p>
+            </div>
+            <div class="col-lg-2 col-12 mt-3">
+              <h1 style="color: #00a19e;">98%</h1>
+              <p class="text-secondary">Client Satisfaction</p>
+            </div>
+            <div class="col-lg-2 col-12 mt-3">
+              <h1 style="color: #00a19e;">24/7</h1>
+              <p class="text-secondary">Support Available</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-6 col-12 mt-5 start-2 mt-5 ">
+          <div class="col-lg-12 col-12 mt-5  ">
+            <div class="img-fluid "
+              style="background-image: url(./photo/illustration-15.webp);  background-size: cover;">
+
+              <div class="row justify-content-start cards" style="height: 450px; ">
+                <div class="col-lg-4 col-4  d-flex  align-items-end mb-5">
+                  <div class="cartHeader rounded-3 p-3 bg-light">
+                    <h5 class="text-center"><i class="bi bi-people  me-3 " style="color: #00a19e;"></i>Collaboration
+                    </h5>
+                  </div>
+                </div>
+
+
+                <div class="col-lg-4 col-4  d-flex align-items-start mt-5">
+                  <div class="cartHeader rounded-3 p-3 bg-light ">
+                    <h5 class="text-center"><i class="bi bi-lightbulb  me-3" style="color: #00a19e;"></i>Innovation
+                    </h5>
+                  </div>
+                </div>
+
+
+                <div class="col-lg-4 col-4 d-flex align-items-end mb-5 ">
+                  <div class="cartHeader rounded-3 p-3 bg-light ">
+                    <h5 class="text-center"><i class="bi bi-award me-3 " style="color: #00a19e;"></i>Excellence</h5>
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+      <!-- end header -->
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+    document.querySelectorAll(".dropdown-submenu > a").forEach((el) => {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        document.querySelectorAll(".dropdown-submenu").forEach((submenu) => {
+          if (submenu !== this.parentElement) {
+            submenu.classList.remove("show");
+          }
+        });
+
+
+        this.parentElement.classList.toggle("show");
+      });
+    });
+
+
+    document.addEventListener("click", function () {
+      document
+        .querySelectorAll(".dropdown-submenu")
+        .forEach((submenu) => submenu.classList.remove("show"));
+    });
+  </script>
+
+
+
+  <!-- tooltips -->
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  </script>
+
+</body>
+
+</html>
